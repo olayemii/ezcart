@@ -1,6 +1,9 @@
+import 'package:ezcart/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
 class ProductCircle extends StatelessWidget {
+  final Color color;
+  ProductCircle({this.color = const Color(0xffDAEAEB)});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,7 +14,7 @@ class ProductCircle extends StatelessWidget {
         title: Container(
           padding: EdgeInsets.all(10.0),
           decoration: BoxDecoration(
-            color: Color(0xffDAEAEB),
+            color: color,
             shape: BoxShape.circle,
           ),
           child: Image.asset(
