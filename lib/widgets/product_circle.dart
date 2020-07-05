@@ -9,13 +9,15 @@ class ProductCircle extends StatelessWidget {
       ),
       child: ListTile(
         title: Container(
+          padding: EdgeInsets.all(10.0),
           decoration: BoxDecoration(
             color: Color(0xffDAEAEB),
             shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage("assets/images/jean.png"),
-              fit: BoxFit.contain,
-            ),
+          ),
+          child: Image.asset(
+            "assets/images/jean.png",
+            width: 110.0,
+            height: 110.0,
           ),
         ),
         contentPadding: EdgeInsets.symmetric(
