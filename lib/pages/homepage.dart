@@ -102,7 +102,7 @@ class _HomepageState extends State<Homepage> {
                     FlutterIcons.search_fea,
                     color: Colors.grey[500],
                   ),
-                  SizedBox(width: 20.0),
+                  SizedBox(width: 10.0),
                   Text(
                     "Search products",
                     style: TextStyle(
