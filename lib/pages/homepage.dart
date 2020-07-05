@@ -1,3 +1,4 @@
+import 'package:ezcart/widgets/mini_product_cart.dart';
 import 'package:ezcart/widgets/photo_slider.dart';
 import 'package:ezcart/widgets/product_card.dart';
 import 'package:ezcart/widgets/product_circle.dart';
@@ -116,56 +117,155 @@ class _HomepageState extends State<Homepage> {
           ],
         ),
         body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                height: 270.0,
-                child: PhotoSlider(
-                  images: [
-                    "assets/images/banner.jpg",
-                    "assets/images/banner2.jpg",
-                    "assets/images/banner3.jpg",
-                  ],
+          child: Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  height: 270.0,
+                  child: PhotoSlider(
+                    images: [
+                      "assets/images/banner.jpg",
+                      "assets/images/banner2.jpg",
+                      "assets/images/banner3.jpg",
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                height: 280.0,
-                child: GridView.count(
-                  physics: NeverScrollableScrollPhysics(),
-                  crossAxisCount: 4,
-                  childAspectRatio: 1.0,
-                  padding: const EdgeInsets.all(4.0),
-                  mainAxisSpacing: 8.0,
-                  crossAxisSpacing: 4.0,
-                  children: <Widget>[
-                    ProductCircle(),
-                    ProductCircle(),
-                    ProductCircle(),
-                    ProductCircle(),
-                    ProductCircle(),
-                    ProductCircle(),
-                    ProductCircle(),
-                    ProductCircle(),
-                  ],
+                Container(
+                  margin: EdgeInsets.symmetric(
+                    vertical: 15.0,
+                  ),
+                  child: GridView(
+                    shrinkWrap: true,
+                    physics:
+                        NeverScrollableScrollPhysics(), // if you want IOS bouncing effect, otherwise remove this line
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                    ),
+                    children: <Widget>[
+                      ProductCircle(),
+                      ProductCircle(),
+                      ProductCircle(),
+                      ProductCircle(),
+                      ProductCircle(),
+                      ProductCircle(),
+                      ProductCircle(),
+                      ProductCircle(),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                height: 400.0,
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: GridView.count(
-                  physics: NeverScrollableScrollPhysics(),
-                  crossAxisCount: 2,
-                  childAspectRatio: 0.7,
-                  padding: const EdgeInsets.all(4.0),
-                  mainAxisSpacing: 8.0,
-                  crossAxisSpacing: 16.0,
-                  children: <Widget>[
-                    ProductCard(),
-                  ],
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 16.0,
+                    right: 16.0,
+                    top: 30.0,
+                    bottom: 15.0,
+                  ),
+                  child: Text(
+                    "Flash Deals",
+                    style: Theme.of(context).textTheme.subtitle2.merge(
+                          TextStyle(
+                            fontSize: 16.0,
+                          ),
+                        ),
+                  ),
                 ),
-              ),
-            ],
+                Container(
+                  height: 150.0,
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      MiniProductCart(),
+                      MiniProductCart(),
+                      MiniProductCart(),
+                      MiniProductCart(),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  margin: EdgeInsets.symmetric(
+                    vertical: 30.0,
+                  ),
+                  child: GridView(
+                    shrinkWrap: true,
+                    physics:
+                        NeverScrollableScrollPhysics(), // if you want IOS bouncing effect, otherwise remove this line
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1.5,
+                      mainAxisSpacing: 8.0,
+                      crossAxisSpacing: 16.0,
+                    ),
+                    children: <Widget>[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage("assets/images/banner2.jpg"),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Text(
+                            "New Arrivals",
+                            style: TextStyle(
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/banner2.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 16.0,
+                    right: 16.0,
+                    top: 30.0,
+                    bottom: 15.0,
+                  ),
+                  child: Text(
+                    "You Might Also Like",
+                    style: Theme.of(context).textTheme.subtitle2.merge(
+                          TextStyle(
+                            fontSize: 16.0,
+                          ),
+                        ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  child: GridView.count(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.7,
+                    padding: const EdgeInsets.all(4.0),
+                    mainAxisSpacing: 8.0,
+                    crossAxisSpacing: 16.0,
+                    children: List.generate(20, (index) {
+                      return ProductCard(id: index);
+                    }).toList(),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

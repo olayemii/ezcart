@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class ProductCard extends StatelessWidget {
+  final int id;
+  ProductCard({this.id});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +22,7 @@ class ProductCard extends StatelessWidget {
                   nextScreen(context, PRODUCT_DETAIL);
                 },
                 child: Hero(
-                  tag: "product",
+                  tag: "product$id",
                   child: Container(
                     padding: EdgeInsets.all(8.0),
                     alignment: Alignment.topRight,
