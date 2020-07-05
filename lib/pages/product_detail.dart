@@ -270,7 +270,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           ),
                         ),
                         SizedBox(
-                          height: 20.0,
+                          height: 18.0,
                         ),
                         Row(
                           children: <Widget>[
