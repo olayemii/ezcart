@@ -329,7 +329,7 @@ class _HomepageState extends State<Homepage> {
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     crossAxisCount: 2,
-                    childAspectRatio: 0.7,
+                    childAspectRatio: 0.5,
                     padding: const EdgeInsets.all(4.0),
                     mainAxisSpacing: 8.0,
                     crossAxisSpacing: 16.0,

@@ -44,29 +44,53 @@ class ProductCard extends StatelessWidget {
             ListTile(
               contentPadding: EdgeInsets.all(0),
               title: Text(
-                "Original Demin Hoodie Thick Cotton",
+                "Original Demin Hoodie Thick Cotton".toUpperCase(),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
               subtitle: Container(
-                margin: EdgeInsets.only(
-                  top: 5.0,
-                ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "₦5,000",
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            "USD19.20",
                             style: TextStyle(
-                              fontSize: 20.0,
-                              // color: Colors.orange,
-                              color: Color(0xFF333333),
+                              fontSize: 18.0,
+                              color: Color(0xFF9A0000),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Text(
+                            "USD19.20",
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              decoration: TextDecoration.lineThrough,
+                            ),
+                          ),
                         ],
+                      ),
+                    ),
+                    Container(
+                      height: 50.0,
+                      child: FlatButton(
+                        child: Text(
+                          "ADD TO BAG",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        onPressed: () {},
+                        color: Colors.black,
                       ),
                     )
                   ],
