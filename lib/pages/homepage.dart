@@ -1,5 +1,7 @@
+import 'package:ezcart/routes/routes.dart';
 import 'package:ezcart/tabs/Tab0.dart';
 import 'package:ezcart/tabs/Tab1.dart';
+import 'package:ezcart/utils/next_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -16,6 +18,47 @@ class _HomepageState extends State<Homepage> {
     return DefaultTabController(
       length: 7,
       child: Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          onTap: (int index) {
+            switch (index) {
+              case 2:
+                nextScreen(context, CART);
+            }
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                FlutterIcons.home_ant,
+              ),
+              title: Text("Home"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                FlutterIcons.skin_ant,
+              ),
+              title: Text("Categories"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                FlutterIcons.shopping_bag_fea,
+              ),
+              title: Text("Cart"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                FlutterIcons.message1_ant,
+              ),
+              title: Text("Help"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                FlutterIcons.user_ant,
+              ),
+              title: Text("Account"),
+            ),
+          ],
+        ),
         appBar: AppBar(
           title: RichText(
             text: TextSpan(
