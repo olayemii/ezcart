@@ -1,5 +1,6 @@
 import 'package:ezcart/pages/account.dart';
 import 'package:ezcart/pages/cart.dart';
+import 'package:ezcart/pages/categories.dart';
 import 'package:ezcart/pages/homepage.dart';
 import 'package:ezcart/pages/product_detail.dart';
 import 'package:ezcart/pages/walkthrough.dart';
@@ -20,6 +21,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
           builder: (BuildContext context) => Walkthrough());
     case CART:
       return MaterialPageRoute(builder: (BuildContext context) => Cart());
+    case CATEGORY:
+      return MaterialPageRoute(builder: (BuildContext context) => Categories());
     default:
       return MaterialPageRoute(
           builder: (BuildContext context) => ProductDetail());

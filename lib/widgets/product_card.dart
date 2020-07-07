@@ -13,7 +13,7 @@ class ProductCard extends StatelessWidget {
         bottom: 20.0,
       ),
       child: Container(
-        height: 300.0,
+        height: 230.0,
         child: Column(
           children: <Widget>[
             Expanded(
@@ -41,62 +41,62 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
-              contentPadding: EdgeInsets.all(0),
-              title: Text(
-                "Original Demin Hoodie Thick Cotton".toUpperCase(),
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-              subtitle: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: Row(
-                        children: <Widget>[
-                          Text(
-                            "USD19.20",
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              color: Color(0xFF9A0000),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20.0,
-                          ),
-                          Text(
-                            "USD19.20",
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              decoration: TextDecoration.lineThrough,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 50.0,
-                      child: FlatButton(
-                        child: Text(
-                          "ADD TO BAG",
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        onPressed: () {},
-                        color: Colors.black,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            )
+            // ListTile(
+            //   contentPadding: EdgeInsets.all(0),
+            //   title: Text(
+            //     "Original Demin Hoodie Thick Cotton".toUpperCase(),
+            //     style: TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //     maxLines: 1,
+            //     overflow: TextOverflow.ellipsis,
+            //   ),
+            //   subtitle: Container(
+            //     child: Column(
+            //       crossAxisAlignment: CrossAxisAlignment.stretch,
+            //       children: <Widget>[
+            //         Padding(
+            //           padding: const EdgeInsets.symmetric(vertical: 8.0),
+            //           child: Row(
+            //             children: <Widget>[
+            //               Text(
+            //                 "USD19.20",
+            //                 style: TextStyle(
+            //                   fontSize: 18.0,
+            //                   color: Color(0xFF9A0000),
+            //                   fontWeight: FontWeight.bold,
+            //                 ),
+            //               ),
+            //               SizedBox(
+            //                 width: 20.0,
+            //               ),
+            //               Text(
+            //                 "USD19.20",
+            //                 style: TextStyle(
+            //                   fontSize: 18.0,
+            //                   decoration: TextDecoration.lineThrough,
+            //                 ),
+            //               ),
+            //             ],
+            //           ),
+            //         ),
+            //         Container(
+            //           height: 50.0,
+            //           child: FlatButton(
+            //             child: Text(
+            //               "ADD TO BAG",
+            //               style: TextStyle(
+            //                 color: Colors.white,
+            //               ),
+            //             ),
+            //             onPressed: () {},
+            //             color: Colors.black,
+            //           ),
+            //         )
+            //       ],
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),
