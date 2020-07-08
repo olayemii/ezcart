@@ -1,4 +1,7 @@
+import 'package:ezcart/widgets/category_container.dart';
 import 'package:ezcart/widgets/mini_product_cart.dart';
+import 'package:ezcart/widgets/product_category.dart';
+import 'package:ezcart/widgets/product_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -15,7 +18,7 @@ class Categories extends StatelessWidget {
               Container(
                 height:
                     MediaQuery.of(context).size.height - kToolbarHeight - 2.0,
-                width: 150.0,
+                width: 125.0,
                 decoration: BoxDecoration(
                   color: Colors.white,
                 ),
@@ -67,7 +70,7 @@ class Categories extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: ListTile(
-                        title: Text("Accessoried & Beauty"),
+                        title: Text("Accessories & Beauty"),
                       ),
                     ),
                     Divider(height: 0.0),
@@ -112,38 +115,10 @@ class Categories extends StatelessWidget {
                         SizedBox(
                           height: 10.0,
                         ),
-                        Container(
-                          height: MediaQuery.of(context).size.height - 226.0,
-                          color: Colors.white,
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Text(
-                                    "Women Fashion",
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: SizedBox(),
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text("ALL"),
-                                      Icon(
-                                        FlutterIcons.chevron_right_fea,
-                                        size: 18.0,
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
+                        CategoryContainer(name: "Hot"),
+                        CategoryContainer(name: "Tops"),
+                        CategoryContainer(name: "Lingeries"),
+                        CategoryContainer(name: "Accessories"),
                       ],
                     ),
                   ),
