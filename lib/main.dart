@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       defaultBrightness: Brightness.light,
       data: (brightness) => ThemeData(
         textTheme: TextTheme(
-          body1: TextStyle(
+          bodyText1: TextStyle(
             fontFamily: "SourceSans",
           ),
         ),
