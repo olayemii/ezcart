@@ -1,3 +1,4 @@
+import 'package:ezcart/widgets/bottom_navigation.dart';
 import 'package:ezcart/widgets/category_container.dart';
 import 'package:ezcart/widgets/mini_product_cart.dart';
 import 'package:ezcart/widgets/product_category.dart';

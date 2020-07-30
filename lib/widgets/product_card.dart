@@ -34,9 +34,6 @@ class ProductCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child: Icon(
-                      FlutterIcons.heart_fea,
-                    ),
                   ),
                 ),
               ),

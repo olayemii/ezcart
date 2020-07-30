@@ -29,6 +29,7 @@ dependencies:
   dots_indicator: ^1.2.0
   google_fonts: ^1.1.0
   intro_slider: ^2.3.1
+  provider: ^4.3.1
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +50,9 @@ flutter:
     - assets/images/banner.jpg
     - assets/images/banner2.jpg
     - assets/images/banner3.jpg
+    - assets/images/ezcart.jpg
+    - assets/images/ezcart1.jpg
+    - assets/images/ezcart2.jpg
     - assets/images/jean.png
   #  - images/a_dot_ham.jpeg
 

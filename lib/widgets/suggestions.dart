@@ -30,7 +30,7 @@ class Suggestions extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             crossAxisCount: 2,
-            childAspectRatio: 0.7,
+            childAspectRatio: 1,
             padding: const EdgeInsets.all(4.0),
             mainAxisSpacing: 8.0,
             crossAxisSpacing: 16.0,

@@ -1,11 +1,17 @@
+import 'package:ezcart/pages/account.dart';
+import 'package:ezcart/pages/cart.dart';
+import 'package:ezcart/pages/categories.dart';
+import 'package:ezcart/providers/BottomViewProvider.dart';
 import 'package:ezcart/routes/routes.dart';
 import 'package:ezcart/tabs/Tab0.dart';
 import 'package:ezcart/tabs/Tab1.dart';
 import 'package:ezcart/utils/next_screen.dart';
+import 'package:ezcart/widgets/bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
+import 'package:provider/provider.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -15,50 +21,37 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
+    Widget getDisplayScreen() {
+      switch (Provider.of<BottomViewProvider>(context).currentPage) {
+        case 0:
+          return TabBarView(
+            children: <Widget>[
+              Tab0(),
+              Tab1(),
+              Tab0(),
+              Tab0(),
+              Tab0(),
+              Tab0(),
+              Tab0(),
+            ],
+          );
+        case 1:
+          return Categories();
+        case 2:
+          return Cart();
+        case 3:
+          return Container();
+        case 4:
+          return Account();
+        default:
+          return Container();
+      }
+    }
+
     return DefaultTabController(
       length: 7,
       child: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          onTap: (int index) {
-            switch (index) {
-              case 2:
-                nextScreen(context, CART);
-            }
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(
-                FlutterIcons.home_ant,
-              ),
-              title: Text("Home"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                FlutterIcons.skin_ant,
-              ),
-              title: Text("Categories"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                FlutterIcons.shopping_bag_fea,
-              ),
-              title: Text("Cart"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                FlutterIcons.message1_ant,
-              ),
-              title: Text("Help"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                FlutterIcons.user_ant,
-              ),
-              title: Text("Account"),
-            ),
-          ],
-        ),
+        bottomNavigationBar: BottomNavigation(),
         appBar: AppBar(
           title: RichText(
             text: TextSpan(
@@ -157,17 +150,7 @@ class _HomepageState extends State<Homepage> {
             )
           ],
         ),
-        body: TabBarView(
-          children: <Widget>[
-            Tab0(),
-            Tab1(),
-            Tab0(),
-            Tab0(),
-            Tab0(),
-            Tab0(),
-            Tab0(),
-          ],
-        ),
+        body: getDisplayScreen(),
       ),
     );
   }

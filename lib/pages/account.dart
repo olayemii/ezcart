@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:ezcart/widgets/bottom_navigation.dart';
 import 'package:ezcart/widgets/suggestions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -27,18 +28,10 @@ class Account extends StatelessWidget {
               color: Colors.grey[100],
               child: SingleChildScrollView(
                 child: Container(
-                  padding: EdgeInsets.all(12.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      SizedBox(
-                        height: 10.0,
-                      ),
-                      Container(
-                        height: 120.0,
-                        color: Colors.white,
-                      ),
                       SizedBox(
                         height: 20.0,
                       ),
