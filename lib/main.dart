@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             debugShowCheckedModeBanner: false,
             theme: theme,
-            initialRoute: INDEX,
+            initialRoute: REFER_FRIENDS,
             onGenerateRoute: onGenerateRoute,
           );
         },

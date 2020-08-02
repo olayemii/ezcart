@@ -5,3 +5,4 @@ const String WALKTHROUGH = "/walkthrough";
 const String CART = "/cart";
 const String CATEGORY = "/category";
 const String ORDERS = "/orders";
+const String REFER_FRIENDS = "/refer";

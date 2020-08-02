@@ -6,21 +6,6 @@ class Cart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.5,
-        iconTheme: IconThemeData(
-          color: Color(0xFF333333),
-        ),
-        title: Text(
-          "Shopping Cart",
-          style: GoogleFonts.openSans(
-            color: Color(0xFF333333),
-            fontSize: 18.0,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[

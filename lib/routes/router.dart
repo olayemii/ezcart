@@ -4,6 +4,7 @@ import 'package:ezcart/pages/categories.dart';
 import 'package:ezcart/pages/homepage.dart';
 import 'package:ezcart/pages/orders.dart';
 import 'package:ezcart/pages/product_detail.dart';
+import 'package:ezcart/pages/refer_friends.dart';
 import 'package:ezcart/pages/walkthrough.dart';
 import 'package:ezcart/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (BuildContext context) => Cart());
     case CATEGORY:
       return MaterialPageRoute(builder: (BuildContext context) => Categories());
+    case REFER_FRIENDS:
+      return MaterialPageRoute(
+          builder: (BuildContext context) => ReferFriends());
     default:
       return MaterialPageRoute(
           builder: (BuildContext context) => ProductDetail());

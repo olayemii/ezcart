@@ -75,46 +75,48 @@ class _HomepageState extends State<Homepage> {
           ),
           backgroundColor: Colors.white,
           elevation: 0.0,
-          bottom: TabBar(
-            labelStyle: TextStyle(
-              //up to your taste
-              fontWeight: FontWeight.w400,
-            ),
-            indicatorSize: TabBarIndicatorSize.label, //makes it better
-            labelColor: Color(0xFF333333), //Google's sweet blue
-            unselectedLabelColor: Color(0xff5f6368), //niceish grey
-            isScrollable: true, //up to your taste
-            indicator: MD2Indicator(
-                //it begins here
-                indicatorHeight: 3,
-                indicatorColor: Color(0xFF333333),
-                indicatorSize:
-                    MD2IndicatorSize.full //3 different modes tiny-normal-full
+          bottom: Provider.of<BottomViewProvider>(context).currentPage > 0
+              ? null
+              : TabBar(
+                  labelStyle: TextStyle(
+                    //up to your taste
+                    fontWeight: FontWeight.w400,
+                  ),
+                  indicatorSize: TabBarIndicatorSize.label, //makes it better
+                  labelColor: Color(0xFF333333), //Google's sweet blue
+                  unselectedLabelColor: Color(0xff5f6368), //niceish grey
+                  isScrollable: true, //up to your taste
+                  indicator: MD2Indicator(
+                      //it begins here
+                      indicatorHeight: 3,
+                      indicatorColor: Color(0xFF333333),
+                      indicatorSize: MD2IndicatorSize
+                          .full //3 different modes tiny-normal-full
+                      ),
+                  tabs: <Widget>[
+                    Tab(
+                      text: "Sale",
+                    ),
+                    Tab(
+                      text: "Men",
+                    ),
+                    Tab(
+                      text: "Women",
+                    ),
+                    Tab(
+                      text: "Kids & Moms",
+                    ),
+                    Tab(
+                      text: "Trending",
+                    ),
+                    Tab(
+                      text: "Trending",
+                    ),
+                    Tab(
+                      text: "Trending",
+                    )
+                  ],
                 ),
-            tabs: <Widget>[
-              Tab(
-                text: "Sale",
-              ),
-              Tab(
-                text: "Men",
-              ),
-              Tab(
-                text: "Women",
-              ),
-              Tab(
-                text: "Kids & Moms",
-              ),
-              Tab(
-                text: "Trending",
-              ),
-              Tab(
-                text: "Trending",
-              ),
-              Tab(
-                text: "Trending",
-              )
-            ],
-          ),
           actions: <Widget>[
             Container(
               height: 30.0,
